@@ -79,6 +79,6 @@
   "C_Cpp.formatting": "Default",
   "editor.inlayHints.fontFamily": "Consolas, 'Courier New', monospace",
   "workbench.colorCustomizations": {
-    "gitDecoration.ignoredResourceForeground": "#fff"
+    "gitDecoration.ignoredResourceForeground": "#e1e4e8"
   }
 }
