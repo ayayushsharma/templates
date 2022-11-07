@@ -80,5 +80,6 @@
   "editor.inlayHints.fontFamily": "Consolas, 'Courier New', monospace",
   "workbench.colorCustomizations": {
     "gitDecoration.ignoredResourceForeground": "#e1e4e8"
-  }
+  },
+  "cph.language.cpp.Args": "-std=c++17 -DLOCAL"
 }
