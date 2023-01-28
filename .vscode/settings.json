@@ -74,12 +74,29 @@
     "initializer_list": "cpp",
     "iomanip": "cpp",
     "iostream": "cpp",
-    "stdexcept": "cpp"
+    "stdexcept": "cpp",
+    "span": "cpp",
+    "ranges": "cpp",
+    "stacktrace": "cpp",
+    "barrier": "cpp",
+    "compare": "cpp",
+    "concepts": "cpp",
+    "coroutine": "cpp",
+    "expected": "cpp",
+    "source_location": "cpp",
+    "latch": "cpp",
+    "numbers": "cpp",
+    "semaphore": "cpp",
+    "spanstream": "cpp",
+    "stop_token": "cpp",
+    "syncstream": "cpp"
   },
-  "C_Cpp.formatting": "Default",
+  "C_Cpp.formatting": "default",
   "editor.inlayHints.fontFamily": "Consolas, 'Courier New', monospace",
   "workbench.colorCustomizations": {
     "gitDecoration.ignoredResourceForeground": "#e1e4e8"
   },
-  "cph.language.cpp.Args": "-std=c++17 -DLOCAL"
+  "cph.language.cpp.Args": "-std=c++17 -DLOCAL",
+  "C_Cpp.errorSquiggles": "disabled",
+  "editor.formatOnSave": true
 }

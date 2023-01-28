@@ -21,25 +21,18 @@ typedef stack<int> stacki;
 #define pb push_back
 #define mp make_pair
 #define all(x) x.begin(), x.end()
-#define TemTyp template <typename
-#define Typ typename
-#define space " "
+#define tem template <typename
 
 #if defined(ONLINE_JUDGE) || !defined(LOCAL)
-#define echo(...) "";
-#define TESTCASE "";
+#define echo(...)
+#define TESTCASE
 #else
-#define echo(...) __debug_print(#__VA_ARGS__, __VA_ARGS__)
-#define TESTCASE cout << "case " << i << ": " << endl;
+#include "debug/debug.h"
 #endif
 
-// DEBUG //
-TemTyp T > void __deb(std::istringstream &ss, T arg);
-TemTyp... T > void __debug_print(const char *n, T &&...args);
-// DEBUG //
-TemTyp T > void take(vector<T> &s, int n);
-TemTyp T > void print(vector<T> &s, string e = "\n");
-int gcd(int a, int b);
+tem T > void take(vector<T> &s, int n);
+tem T > void print(vector<T> &s, string e = "");
+tem T > void println(vector<T> &s);
 string binary(int n);
 
 const int INF = 1e18;
@@ -49,7 +42,6 @@ int expo(int a, int b, int m = MOD);
 void solve(int testcase) {
   int n;
   cin >> n;
-  //
 }
 
 int32_t main() {
@@ -58,85 +50,20 @@ int32_t main() {
   cin >> t;
   loop(i, 1, t + 1) {
     TESTCASE;
-    solve(i);
+    solve(t);
     cout << endl;
   }
   return 0;
 }
-
-TemTyp T > void take(vector<T> &s, int n) {
+tem T > void take(vector<T> &s, int n) {
   s.resize(n);
   for (auto &it : s) cin >> it;
 }
-TemTyp T > void print(vector<T> &s, string e) {
+tem T > void print(vector<T> &s, string e) {
   for (auto x : s) cout << x << " ";
   cout << e;
 }
-int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }
-/////////////////////////DEBUG///////////////////////////
-namespace debugging {
-TemTyp T > void _print(T c) { cout << c; }
-TemTyp T, Typ V > void _print(pair<T, V> c) {
-  cout << "{";
-  debugging::_print(c.first);
-  cout << ",";
-  debugging::_print(c.second);
-  cout << "}";
-}
-TemTyp T > void _print(vector<T> c) {
-  cout << "{";
-  loop(i, 0, c.size() - 1) {
-    debugging::_print(c[i]);
-    cout << ", ";
-  }
-  debugging::_print(*--c.end());
-  cout << "}";
-}
-TemTyp T > void _print(vector<vector<T>> c) {
-  cout << "\n{\n";
-  loop(i, 0, c.size() - 1) {
-    cout << "\t";
-    debugging::_print(c[i]);
-    cout << "," << endl;
-  }
-  cout << "\t";
-  debugging::_print(*--c.end());
-  cout << "\n}\n";
-}
-TemTyp T > void _print(set<T> c) {
-  cout << "{";
-  for (auto x : c) {
-    debugging::_print(x);
-    cout << ", ";
-  }
-  cout << "}";
-}
-
-TemTyp T, Typ V > void _print(map<T, V> c) {
-  cout << endl;
-  for (auto x : c) {
-    cout << "\t";
-    debugging::_print(x.first);
-    cout << "  ";
-    debugging::_print(x.second);
-    cout << endl;
-  }
-}
-}  // namespace debugging
-TemTyp T > void __deb(istringstream &ss, T arg) {
-  string n;
-  getline(ss, n, ',');
-  const auto pos(n.find_first_not_of(" "));
-  n.erase(0, pos);
-  cout << "[" << n << ": ";
-  debugging::_print(arg);
-  cout << "] ";
-}
-TemTyp... T > void __debug_print(const char *n, T &&...args) {
-  istringstream ss(n);
-  (__deb(ss, args), ...);
-}
-/////////////////////////DEBUG///////////////////////////
+tem T > void println(vector<T> &s) { print(s, "\n"); }
 string binary(int a) {
   if (a == 0) return "0";
   string s = bitset<sizeof a * 8>(a).to_string();
