@@ -96,7 +96,7 @@
   "workbench.colorCustomizations": {
     "gitDecoration.ignoredResourceForeground": "#e1e4e8"
   },
-  "cph.language.cpp.Args": "-std=c++17 -DLOCAL",
+  "cph.language.cpp.Args": "-std=c++17 -DLOCAL -fsanitize=undefined",
   "C_Cpp.errorSquiggles": "disabled",
   "editor.formatOnSave": true
 }

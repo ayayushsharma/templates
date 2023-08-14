@@ -1,7 +1,9 @@
 #ifndef CP_DEBUG_H
 
 #define CP_DEBUG_H
-#define echo(...) debugging::__debug_print(#__VA_ARGS__, __VA_ARGS__)
+#define echo(...)                                      \
+  debugging::__debug_print(#__VA_ARGS__, __VA_ARGS__); \
+  cout << endl;
 #define TESTCASE cout << "case " << i << ": " << endl;
 #define tab "    "
 #define smalltab "  "
@@ -23,30 +25,27 @@ void _print(pair<T, V> c) {
 
 template <typename T>
 void _print(vector<T> c) {
-  int f = 0; 
-  cout << '{'; 
-  for (auto &i: c) 
-    cout << (f++ ? "," : ""), debugging::_print(i); 
+  int f = 0;
+  cout << '{';
+  for (auto &i : c) cout << (f++ ? "," : ""), debugging::_print(i);
   cout << "}";
 }
 
 template <typename T>
 void _print(vector<vector<T>> c) {
   cout << "\n" smalltab "{\n" tab;
-  int f = 0; 
-  for (auto &i: c) { 
-    cout << (f++ ? ",\n" tab : ""), debugging::_print(i); 
+  int f = 0;
+  for (auto &i : c) {
+    cout << (f++ ? ",\n" tab : ""), debugging::_print(i);
   }
   cout << "\n" smalltab "}\n ";
 }
 
 template <typename T>
 void _print(set<T> c) {
-  cout << "{";
-  for (auto x : c) {
-    debugging::_print(x);
-    cout << ", ";
-  }
+  int f = 0;
+  cout << '{';
+  for (auto &i : c) cout << (f++ ? ", " : ""), debugging::_print(i);
   cout << "}";
 }
 
