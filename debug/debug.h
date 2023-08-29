@@ -24,6 +24,32 @@ void _print(pair<T, V> c) {
 }
 
 template <typename T>
+void _print(priority_queue<T> c) {
+  cout << '{';
+  int x;
+  while (c.size() > 1) {
+    debugging::_print(c.top());
+    c.pop();
+    cout << ",";
+  }
+  debugging::_print(c.top());
+  cout << "}";
+}
+
+template <typename T>
+void _print(priority_queue<T, vector<T>, greater<T>> c) {
+  cout << '{';
+  int x;
+  while (c.size() > 1) {
+    debugging::_print(c.top());
+    c.pop();
+    cout << ",";
+  }
+  debugging::_print(c.top());
+  cout << "}";
+}
+
+template <typename T>
 void _print(vector<T> c) {
   int f = 0;
   cout << '{';
