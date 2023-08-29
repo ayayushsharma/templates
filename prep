@@ -22,6 +22,12 @@ typedef stack<int> stacki;
 #define mp make_pair
 #define all(x) x.begin(), x.end()
 #define tem template <typename
+#define no \
+  "NO";    \
+  return;
+#define yes \
+  "YES";    \
+  return;
 
 #if defined(ONLINE_JUDGE) || !defined(LOCAL)
 #define echo(...)

@@ -98,5 +98,6 @@
   },
   "cph.language.cpp.Args": "-std=c++17 -DLOCAL -fsanitize=undefined",
   "C_Cpp.errorSquiggles": "disabled",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "cph.general.saveLocation": ""
 }
