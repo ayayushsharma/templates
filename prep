@@ -20,6 +20,8 @@ typedef stack<int> stacki;
 #define abs(a) ((a) > 0 ? (a) : -1 * (a))
 #define pb push_back
 #define mp make_pair
+#define F first
+#define S second
 #define all(x) x.begin(), x.end()
 #define tem template <typename
 #define no \

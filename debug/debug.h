@@ -26,7 +26,10 @@ void _print(pair<T, V> c) {
 template <typename T>
 void _print(priority_queue<T> c) {
   cout << '{';
-  int x;
+  if (c.empty()) {
+    cout << "}";
+    return;
+  }
   while (c.size() > 1) {
     debugging::_print(c.top());
     c.pop();
@@ -39,7 +42,10 @@ void _print(priority_queue<T> c) {
 template <typename T>
 void _print(priority_queue<T, vector<T>, greater<T>> c) {
   cout << '{';
-  int x;
+  if (c.empty()) {
+    cout << "}";
+    return;
+  }
   while (c.size() > 1) {
     debugging::_print(c.top());
     c.pop();
@@ -69,6 +75,14 @@ void _print(vector<vector<T>> c) {
 
 template <typename T>
 void _print(set<T> c) {
+  int f = 0;
+  cout << '{';
+  for (auto &i : c) cout << (f++ ? ", " : ""), debugging::_print(i);
+  cout << "}";
+}
+
+template <typename T>
+void _print(multiset<T> c) {
   int f = 0;
   cout << '{';
   for (auto &i : c) cout << (f++ ? ", " : ""), debugging::_print(i);
