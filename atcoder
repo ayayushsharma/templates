@@ -11,7 +11,6 @@ typedef map<int, int> mapi;
 typedef set<int> seti;
 typedef stack<int> stacki;
 
-#define fast_io ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0)
 #define endl "\n"
 #define loop(i, a, b) for (int i = (int)a; i < (int)b; i++)
 #define rloop(i, a, b) for (int i = (int)a; i >= (int)b; i--)
@@ -20,11 +19,21 @@ typedef stack<int> stacki;
 #define abs(a) ((a) > 0 ? (a) : -1 * (a))
 #define pb push_back
 #define mp make_pair
+#define F first
+#define S second
 #define all(x) x.begin(), x.end()
 #define tem template <typename
+#define no \
+  "NO";    \
+  return;
+#define yes \
+  "YES";    \
+  return;
 
 #if defined(ONLINE_JUDGE) || !defined(LOCAL)
+#define fast_io ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0)
 #define echo(...)
+#define graph(...)
 #define TESTCASE
 #else
 #include "debug/debug.h"
