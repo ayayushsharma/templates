@@ -1,10 +1,17 @@
 #ifndef CP_DEBUG_H
 
+#if defined(DEBUG_GRAPH)
+#include "graph/graph.h"
+#else
+#define graph(...)
+#endif
+
 #define CP_DEBUG_H
 #define echo(...)                                      \
   debugging::__debug_print(#__VA_ARGS__, __VA_ARGS__); \
   cout << endl;
 #define TESTCASE cout << "case " << i << ": " << endl;
+#define fast_io ios_base::sync_with_stdio(true), std::cin.tie(0);
 #define tab "    "
 #define smalltab "  "
 

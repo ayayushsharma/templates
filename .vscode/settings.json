@@ -89,7 +89,9 @@
     "semaphore": "cpp",
     "spanstream": "cpp",
     "stop_token": "cpp",
-    "syncstream": "cpp"
+    "syncstream": "cpp",
+    "format": "cpp",
+    "stdfloat": "cpp"
   },
   "C_Cpp.formatting": "default",
   "editor.inlayHints.fontFamily": "Consolas, 'Courier New', monospace",
@@ -99,5 +101,6 @@
   "cph.language.cpp.Args": "-std=c++17 -DLOCAL -fsanitize=undefined",
   "C_Cpp.errorSquiggles": "disabled",
   "editor.formatOnSave": true,
-  "cph.general.saveLocation": ""
+  "cph.general.saveLocation": "",
+  "workbench.statusBar.visible": false
 }
