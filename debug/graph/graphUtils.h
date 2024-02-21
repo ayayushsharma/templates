@@ -62,7 +62,8 @@ void createGraphSVG() {
  * Prints the svg in form of sixel in height * width
  */
 void createGraphSixel(int HEIGHT, int WIDTH) {
-  string COMMAND = "vv -a -P=" + std::to_string(HEIGHT) + "x" +
+  string COMMAND = "vv --preview-size=" + std::to_string(max(HEIGHT, WIDTH)) +
+                   " --geometry=" + std::to_string(HEIGHT) + "x" +
                    std::to_string(WIDTH) + " " + GRAPH_SVG_FILE_LOCATION;
   graphUtils::exec(COMMAND);
 }
@@ -70,9 +71,9 @@ void createGraphSixel(int HEIGHT, int WIDTH) {
  * Prints the svg in form of sixel and resizes it automatically
  */
 void createGraphSixel(int number_of_edges) {
-  int FACTOR = log(number_of_edges);
-  int HEIGHT = max(GRAPH_DEFAULT_HEIGHT, FACTOR * GRAPH_DEFAULT_HEIGHT / 2),
-      WIDTH = max(GRAPH_DEFAULT_WIDTH, FACTOR * GRAPH_DEFAULT_WIDTH / 2);
+  int FACTOR = sqrt(number_of_edges);
+  int HEIGHT = min(1000, FACTOR * GRAPH_DEFAULT_HEIGHT / 2),
+      WIDTH = min(1800, FACTOR * GRAPH_DEFAULT_WIDTH / 2);
   graphUtils::createGraphSixel(HEIGHT, WIDTH);
 }
 

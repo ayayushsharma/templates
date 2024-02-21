@@ -66,7 +66,7 @@ template <typename T>
 void _print(vector<T> c) {
   int f = 0;
   cout << '{';
-  for (auto &i : c) cout << (f++ ? "," : ""), debugging::_print(i);
+  for (auto i : c) cout << (f++ ? "," : ""), debugging::_print(i);
   cout << "}";
 }
 
@@ -100,7 +100,7 @@ template <typename T, typename V>
 void _print(map<T, V> c) {
   cout << endl;
   for (auto x : c) {
-    cout << "\t";
+    cout << smalltab;
     debugging::_print(x.first);
     cout << "  ";
     debugging::_print(x.second);
