@@ -2,36 +2,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define int long long
-typedef pair<int, int> pii;
-typedef vector<int> vi;
+// clang-format off
+#define int                 long long
+typedef pair<int, int>      pii;
+typedef vector<int>         vi;
 typedef vector<vector<int>> vvi;
-typedef vector<pii> vpii;
-typedef map<int, int> mapi;
-typedef set<int> seti;
-typedef stack<int> stacki;
+typedef vector<pii>         vpii;
+typedef map<int, int>       mapi;
+typedef set<int>            seti;
+typedef stack<int>          stacki;
 
-#define endl "\n"
-#define loop(i, a, b) for (int i = (int)a; i < (int)b; i++)
-#define rloop(i, a, b) for (int i = (int)a; i >= (int)b; i--)
-#define max(a, b) (((a) > (b)) ? (a) : (b))
-#define min(a, b) (((a) < (b)) ? (a) : (b))
-#define abs(a) ((a) > 0 ? (a) : -1 * (a))
-#define pb push_back
-#define mp make_pair
-#define F first
-#define S second
-#define all(x) x.begin(), x.end()
-#define tem template <typename
-#define no \
-  "NO";    \
-  return;
-#define yes \
-  "YES";    \
-  return;
+#define endl                "\n"
+#define loop(i, a, b)       for (int i = (int)a; i < (int)b; i++)
+#define rloop(i, a, b)      for (int i = (int)a; i >= (int)b; i--)
+#define max(a, b)           (((a) > (b)) ? (a) : (b))
+#define min(a, b)           (((a) < (b)) ? (a) : (b))
+#define abs(a)              ((a) > 0 ? (a) : -1 * (a))
+#define pb                  push_back
+#define mp                  make_pair
+#define F                   first
+#define S                   second
+#define all(x)              x.begin(), x.end()
+#define tem                 template <typename
+#define no                  "NO"; return;
+#define yes                 "YES"; return;
 
 #if defined(ONLINE_JUDGE) || !defined(LOCAL)
-#define fast_io ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0)
+#define fast_io             ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0)
 #define echo(...)
 #define graph(...)
 #define TESTCASE
@@ -39,10 +36,12 @@ typedef stack<int> stacki;
 #include "debug/debug.h"
 #endif
 
+// clang-format on
 tem T > void take(vector<T> &s, int n);
 tem T > void print(vector<T> &s, string e = "");
 tem T > void println(vector<T> &s);
 string binary(int n);
+int number(string s);
 
 const int INF = 1e18;
 const int MOD = 1e9 + 7;
@@ -51,6 +50,7 @@ int expo(int a, int b, int m = MOD);
 void solve(int testcase) {
   int n;
   cin >> n;
+  //
 }
 
 int32_t main() {
@@ -58,42 +58,16 @@ int32_t main() {
   int t = 1;
   // cin >> t;
   loop(i, 1, t + 1) {
-    TESTCASE;
+    // TESTCASE;
     solve(t);
     cout << endl;
   }
   return 0;
 }
-tem T > void take(vector<T> &s, int n) {
-  s.resize(n);
-  for (auto &it : s) cin >> it;
-}
-tem T > void print(vector<T> &s, string e) {
-  for (auto x : s) cout << x << " ";
-  cout << e;
-}
+// clang-format off
+tem T > void take(vector<T> &s, int n) { s.resize(n); for (auto &it : s) cin >> it; }
+tem T > void print(vector<T> &s, string e) { for (auto x : s) cout << x << " "; cout << e; }
 tem T > void println(vector<T> &s) { print(s, "\n"); }
-string binary(int a) {
-  if (a == 0) return "0";
-  string s = bitset<sizeof a * 8>(a).to_string();
-  return s.substr(s.find('1'));
-}
-int number(string s) {
-  reverse(s.begin(), s.end());
-  int a = 0, e = 1;
-  for (char x : s) {
-    if (x - '0') a += e;
-    e <<= 1;
-  }
-  return a;
-}
-int expo(int a, int b, int m) {
-  a %= m;
-  int res = 1;
-  while (b > 0) {
-    if (b & 1) res = res * a % m;
-    a = a * a % m;
-    b >>= 1;
-  }
-  return res;
-}
+string       binary(int a) { if (a == 0) return "0"; string s = bitset<sizeof a * 8>(a).to_string(); return s.substr(s.find('1')); }
+int          number(string s) { reverse(s.begin(), s.end()); int a = 0, e = 1; for (char x : s) { if (x - '0') a += e; e <<= 1; }  return a; }
+int          expo(int a, int b, int m) { a %= m; int res = 1; while (b > 0) { if (b & 1) res = res * a % m;a = a * a % m;b >>= 1;} return res; }
