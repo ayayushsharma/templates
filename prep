@@ -33,7 +33,7 @@ typedef stack<int>          stacki;
 #define graph(...)
 #define TESTCASE
 #else
-#include "debug/debug.h"
+#include "debug/debug.hpp"
 #endif
 
 // clang-format on

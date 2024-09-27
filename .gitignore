@@ -12,3 +12,6 @@
 8
 9
 *.graph
+
+save/
+testcases/
