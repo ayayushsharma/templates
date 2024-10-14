@@ -6,7 +6,11 @@
 
 #define CP_GRAPHUTILS_H
 
-#include <bits/stdc++.h>
+#include <string>
+#include <fstream>
+#include <algorithm>
+#include <cmath>
+
 
 const std::string GRAPH_DOT_FILE_LOCATION = "/tmp/graph.dot";
 const std::string GRAPH_SVG_FILE_LOCATION = "/tmp/graph.svg";
@@ -74,9 +78,9 @@ void createGraphSixel(int HEIGHT, int WIDTH) {
  * Prints the svg in form of sixel and resizes it automatically
  */
 void createGraphSixel(int number_of_edges) {
-  int FACTOR = sqrt(number_of_edges);
-  int HEIGHT = std::min(1000, FACTOR * GRAPH_DEFAULT_HEIGHT / 2),
-      WIDTH = std::min(1800, FACTOR * GRAPH_DEFAULT_WIDTH / 2);
+  int FACTOR = std::sqrt(number_of_edges);
+  int HEIGHT = min(1000, FACTOR * GRAPH_DEFAULT_HEIGHT / 2),
+      WIDTH = min(1800, FACTOR * GRAPH_DEFAULT_WIDTH / 2);
   graphUtils::createGraphSixel(HEIGHT, WIDTH);
 }
 

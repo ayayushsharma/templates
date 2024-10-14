@@ -5,9 +5,11 @@
 #ifndef CP_GRAPH_H
 #define CP_GRAPH_H
 
-#include <bits/stdc++.h>
-
 #include "graphUtils.hpp"
+
+#include <set>
+#include <string>
+#include <vector>
 
 #define graph(x, y) graph::printGraph(x, y)
 

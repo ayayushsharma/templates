@@ -33,8 +33,8 @@ typedef stack<int>          stacki;
 #define graph(...)
 #define TESTCASE
 #else
-#include "debug/debug.hpp"
 #endif
+#include "debug/debug.hpp"
 
 // clang-format on
 tem T > void take(vector<T> &s, int n);

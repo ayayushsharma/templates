@@ -1,0 +1,2 @@
+CompileFlags:
+ Add: [-DLOCAL, -DDEBUG_GRAPH]

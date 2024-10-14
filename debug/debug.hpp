@@ -1,6 +1,14 @@
 #ifndef CP_DEBUG_H
 #define CP_DEBUG_H
 
+#include <iostream>
+#include <istream>
+#include <queue>
+#include <set>
+#include <map>
+#include <string>
+#include <sstream>
+
 #if defined(DEBUG_GRAPH)
 #include "graph/graph.hpp"
 #else
@@ -109,9 +117,9 @@ void _print(std::map<T, V> c) {
 }
 
 template <typename T>
-void __deb(std::istringstream &ss, T arg) {
+void __deb(std::istream &ss, T arg) {
   std::string n;
-  getline(ss, n, ',');
+  std::getline(ss, n, ',');
   const auto pos(n.find_first_not_of(" "));
   n.erase(0, pos);
   std::cout << "[" << n << ": ";
