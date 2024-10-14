@@ -3,18 +3,22 @@
 // and use a sixel compatible terminal. Konsole works
 
 #ifndef CP_GRAPH_H
-
 #define CP_GRAPH_H
 
-#include "graphUtils.h"
+#include "graphUtils.hpp"
+
+#include <set>
+#include <string>
+#include <vector>
 
 #define graph(x, y) graph::printGraph(x, y)
 
 namespace graph {
 
-string undirectedGraphDotString(const vector<vector<int>> &graph) {
+inline std::string undirectedGraphDotString(
+    const std::vector<std::vector<int>> &graph) {
   // to store distinct edges between to vertices
-  set<pair<int, int>> edge;
+  std::set<std::pair<int, int>> edge;
 
   // creating edges
   for (int parent = 0; parent < graph.size(); parent++) {
@@ -24,7 +28,7 @@ string undirectedGraphDotString(const vector<vector<int>> &graph) {
   }
 
   // making a string to put into the graph.dot file
-  string dotString = "graph {\n";
+  std::string dotString = "graph {\n";
   for (auto vertices : edge) {
     dotString += std::to_string(vertices.first) + " -- " +
                  std::to_string(vertices.second) + ";\n";
@@ -35,19 +39,20 @@ string undirectedGraphDotString(const vector<vector<int>> &graph) {
   return dotString;
 }
 
-string directedGraphDotString(const vector<vector<int>> &graph) {
+inline std::string directedGraphDotString(
+    const std::vector<std::vector<int>> &graph) {
   // to store distinct edges between to vertices
-  set<pair<int, int>> edge;
+  std::set<std::pair<int, int>> edge;
 
   // creating edges
   for (int parent = 0; parent < graph.size(); parent++) {
     for (int child = 0; child < graph[parent].size(); child++) {
-      edge.insert(make_pair(parent, graph[parent][child]));
+      edge.insert(std::make_pair(parent, graph[parent][child]));
     }
   }
 
   // making a string to put into the graph.dot file
-  string dotString = "digraph {\n";
+  std::string dotString = "digraph {\n";
   for (auto vertices : edge) {
     dotString += std::to_string(vertices.first) + " -> " +
                  std::to_string(vertices.second) + ";\n";
@@ -58,32 +63,32 @@ string directedGraphDotString(const vector<vector<int>> &graph) {
   return dotString;
 }
 
-void printUndirectedGraph(const vector<vector<int>> &graph) {
-  string graphString = graph::undirectedGraphDotString(graph);
+inline void printUndirectedGraph(const std::vector<std::vector<int>> &graph) {
+  std::string graphString = graph::undirectedGraphDotString(graph);
   graphUtils::printSixelGraph(graphString);
 }
 
-void printDirectedGraph(const vector<vector<int>> &graph) {
-  string graphString = graph::directedGraphDotString(graph);
+inline void printDirectedGraph(const std::vector<std::vector<int>> &graph) {
+  std::string graphString = graph::directedGraphDotString(graph);
   graphUtils::printSixelGraph(graphString);
 }
 
 /**
  * Defaults to print graph
  */
-void printGraph(const vector<vector<int>> &graph, char type) {
+inline void printGraph(const std::vector<std::vector<int>> &graph, char type) {
   switch (type) {
-    case 'U':
-    case 'u':
-      graph::printUndirectedGraph(graph);
-      break;
-    case 'D':
-    case 'd':
-      graph::printDirectedGraph(graph);
-      break;
-    default:
-      graph::printUndirectedGraph(graph);
-      break;
+  case 'U':
+  case 'u':
+    graph::printUndirectedGraph(graph);
+    break;
+  case 'D':
+  case 'd':
+    graph::printDirectedGraph(graph);
+    break;
+  default:
+    graph::printUndirectedGraph(graph);
+    break;
   }
 }
 
