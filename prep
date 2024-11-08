@@ -33,8 +33,8 @@ typedef stack<int>          stacki;
 #define graph(...)
 #define TESTCASE
 #else
-#endif
 #include "debug/debug.hpp"
+#endif
 
 // clang-format on
 tem T > void take(vector<T> &s, int n);
@@ -48,21 +48,21 @@ const int MOD = 1e9 + 7;
 int expo(int a, int b, int m = MOD);
 
 void solve(int testcase) {
-  int n;
-  cin >> n;
-  //
+    int n;
+    cin >> n;
+    //
 }
 
 int32_t main() {
-  fast_io;
-  int t = 1;
-  cin >> t;
-  loop(i, 1, t + 1) {
-    TESTCASE;
-    solve(t);
-    cout << endl;
-  }
-  return 0;
+    fast_io;
+    int t = 1;
+    cin >> t;
+    loop(i, 1, t + 1) {
+        TESTCASE;
+        solve(t);
+        cout << endl;
+    }
+    return 0;
 }
 // clang-format off
 tem T > void take(vector<T> &s, int n) { s.resize(n); for (auto &it : s) cin >> it; }
