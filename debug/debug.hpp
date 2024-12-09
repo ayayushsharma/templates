@@ -9,17 +9,24 @@
 #include <sstream>
 #include <string>
 
-#if defined(DEBUG_GRAPH)
-#include "graph/graph.hpp"
+// if Simulating local is set to false
+#if LOCAL==0
+#define echo(...)
+#define TESTCASE
+#define fast_io
 #else
-#define graph(...)
-#endif
-
 #define echo(...)                                        \
     debugging::__debug_print(#__VA_ARGS__, __VA_ARGS__); \
     cout << "\n";
 #define TESTCASE cout << "case " << i << ": " << endl;
 #define fast_io ios_base::sync_with_stdio(true), std::cin.tie(0);
+#if defined(DEBUG_GRAPH)
+#include "graph/graph.hpp"
+#else
+#define graph(...)
+#endif
+#endif
+
 #define tab "    "
 #define smalltab "  "
 
