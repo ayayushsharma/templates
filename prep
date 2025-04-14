@@ -47,7 +47,7 @@ const int INF = 1e18;
 const int MOD = 1e9 + 7;
 int expo(int a, int b, int m = MOD);
 
-void solve(int testcase) {
+void solve() {
     int n;
     cin >> n;
     //
@@ -59,7 +59,7 @@ int32_t main() {
     cin >> t;
     loop(i, 1, t + 1) {
         TESTCASE;
-        solve(t);
+        solve();
         cout << endl;
     }
     return 0;
