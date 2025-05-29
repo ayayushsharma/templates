@@ -1,4 +1,5 @@
 *.cpp
+*.py
 *.out
 .cph/
 .vscode/c_cpp_properties.json
