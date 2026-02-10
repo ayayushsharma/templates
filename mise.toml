@@ -1,0 +1,2 @@
+[tasks.refresh]
+run = "(ls *.cpp || ls *.out) && rm *.cpp *.out || true"
