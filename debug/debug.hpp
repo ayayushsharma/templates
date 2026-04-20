@@ -7,6 +7,7 @@
 #include <queue>
 #include <set>
 #include <sstream>
+#include <stack>
 #include <string>
 
 // if Simulating local is set to false
@@ -76,6 +77,23 @@ void _print(std::priority_queue<T, std::vector<T>, std::greater<T>> c) {
     debugging::_print(c.top());
     std::cout << "}";
 }
+
+template <typename T>
+void _print(std::stack<T> c) {
+    std::cout << '{';
+    if (c.empty()) {
+        std::cout << "}";
+        return;
+    }
+    while (c.size() > 1) {
+        debugging::_print(c.top());
+        c.pop();
+        std::cout << ",";
+    }
+    debugging::_print(c.top());
+    std::cout << "}";
+}
+
 
 template <typename T>
 void _print(std::vector<T> c) {
