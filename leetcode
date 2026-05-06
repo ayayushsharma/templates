@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+#if !defined(LOCAL)
+#define echo(...)
+#else
+#include "debug/debug.hpp"
+#endif
+
+
+
+// solution starts here
+
+class Solution {
+};
+
+
+int main() {
+    Solution s = Solution();
+
+    
+
+    return 0;
+}
