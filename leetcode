@@ -1,25 +1,61 @@
-#include<bits/stdc++.h>
-using namespace std;
-#if !defined(LOCAL)
-#define echo(...)
-#else
+#include <bits/stdc++.h>
 #include "debug/debug.hpp"
-#endif
+using namespace std;
+int                 take_int();
+string              take_string();
+vector<int>         take_vector();
+vector<vector<int>> take_vvi();
+void                print(vector<int> a);
 
-
-
-// solution starts here
 
 // ---------------- H E S I T A T I O N   I S   D E F E A T ----------------
 
 class Solution {
+public:
+    void fn(vector<int>& nums) {
+    }
 };
 
 
 int main() {
     Solution s = Solution();
 
-    
+    auto ans = 1;
+    echo(ans);
 
     return 0;
+}
+
+
+int take_int() {
+    int x; 
+    cin >> x;
+    return x;
+}
+string take_string() {
+    string s; 
+    cin >> s;
+    return s;
+}
+vector<int> take_vector() {
+    int n; cin >> n;
+    vector<int> s;
+    s.resize(n);
+    for (auto &it : s) cin >> it;
+    return s;
+}
+vector<vector<int>> take_vvi() {
+    int m, n; cin >> m >> n;
+    vector<vector<int>> s(m, vector<int>(n));
+    for (auto &it : s) {
+        for(auto &x : it) {
+            cin >> x;
+        }
+    }
+    return s;
+}
+void print(vector<int> a) {
+    for(auto x : a) {
+        cout << x << endl;
+    }
 }
