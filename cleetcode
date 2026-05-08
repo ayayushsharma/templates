@@ -1,0 +1,48 @@
+#include <algorithm>
+#include <bitset>
+#include <iterator>
+#include <array>
+#include <tuple>
+#include <bit>
+#include <compare>
+#include <numbers>
+#include <cmath>
+#include <cstdio>
+#include <deque>
+#include <iostream>
+#include <map>
+#include <queue>
+#include <set>
+#include <stack>
+#include <string>
+#include <vector>
+using namespace std;
+#if !defined(LOCAL)
+#define echo(...)
+#else
+#include "debug/debug.hpp"
+#endif
+
+
+// start here
+
+// ---------------- H E S I T A T I O N   I S   D E F E A T ----------------
+
+class Solution {
+public:
+    vector<int> kthRemainingInteger(vector<int>& nums, vector<vector<int>>& queries) {
+        return vector<int>();
+    }
+};
+
+
+int main() {
+    Solution s = Solution();
+    
+
+    auto ans = 1;
+
+    echo(ans);
+    
+    return 0;
+}
