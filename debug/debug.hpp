@@ -9,6 +9,7 @@
 #include <sstream>
 #include <stack>
 #include <string>
+#include <unordered_map>
 
 // if Simulating local is set to false
 #if LOCAL==0
@@ -43,6 +44,17 @@ void _print(std::pair<T, V> c) {
     debugging::_print(c.first);
     std::cout << ",";
     debugging::_print(c.second);
+    std::cout << "}";
+}
+
+template <typename T, typename V, typename U>
+void _print(std::tuple<T, V, U> c) {
+    std::cout << "{";
+    debugging::_print(std::get<0>(c));
+    std::cout << ",";
+    debugging::_print(std::get<1>(c));
+    std::cout << ",";
+    debugging::_print(std::get<2>(c));
     std::cout << "}";
 }
 
@@ -131,6 +143,18 @@ void _print(std::multiset<T> c) {
 
 template <typename T, typename V>
 void _print(std::map<T, V> c) {
+    std::cout << "\n";
+    for (auto x : c) {
+        std::cout << smalltab;
+        debugging::_print(x.first);
+        std::cout << "  ";
+        debugging::_print(x.second);
+        std::cout << "\n";
+    }
+}
+
+template <typename T, typename V>
+void _print(std::unordered_map<T, V> c) {
     std::cout << "\n";
     for (auto x : c) {
         std::cout << smalltab;

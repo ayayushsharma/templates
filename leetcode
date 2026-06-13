@@ -4,11 +4,15 @@ using namespace std;
 int                 take_int();
 string              take_string();
 vector<int>         take_vector();
+vector<string>      take_v_string();
 vector<vector<int>> take_vvi();
 void                print(vector<int> a);
 
 
 // ---------------- H E S I T A T I O N   I S   D E F E A T ----------------
+#if LOCAL==0
+#define echo(...)
+#endif
 
 class Solution {
 public:
@@ -35,6 +39,13 @@ int take_int() {
 string take_string() {
     string s; 
     cin >> s;
+    return s;
+}
+vector<string> take_v_string() {
+    int n;
+    cin >> n;
+    vector<string> s(n);
+    for(auto &x : s) x = take_string();
     return s;
 }
 vector<int> take_vector() {
