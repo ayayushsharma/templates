@@ -14,14 +14,11 @@ typedef stack<int>          stacki;
 
 #define endl                "\n"
 #define loop(i, a, b)       for (int i = (int)a; i < (int)b; i++)
-#define rloop(i, a, b)      for (int i = (int)a; i >= (int)b; i--)
 #define max(a, b)           (((a) > (b)) ? (a) : (b))
 #define min(a, b)           (((a) < (b)) ? (a) : (b))
 #define abs(a)              ((a) > 0 ? (a) : -1 * (a))
 #define pb                  push_back
 #define mp                  make_pair
-#define F                   first
-#define S                   second
 #define all(x)              x.begin(), x.end()
 #define tem                 template <typename
 #define no                  "NO"; return;
